@@ -24,3 +24,11 @@ jobs:
           aws s3 cp index.html s3://interview-poject/
         env:
           ENVIRONMENT: prod
+          
+      - name: teardown
+        run: |
+          aws s3 rm index.html s3://interview-poject/
+        env:
+          ENVIRONMENT: prod
+        tags:
+        - '*'
